@@ -26,4 +26,4 @@ with open('producao_alimentos.csv', 'r') as file:
     conn.commit()
     conn.close()
 
-print('Job Concluido Com Sucesso¹')
+print('Job Concluido Com Sucesso')

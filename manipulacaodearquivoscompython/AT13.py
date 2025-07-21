@@ -1,9 +1,10 @@
 import pandas as pd
+import numpy as np
 from pandas import DataFrame
 
-dados = {'Estado':['Santa Catarina', 'Rio de Janeiro', 'Tocantins', 'Bahia', 'Minas Gerais'],
-         'Ano':[2004,2005,2006,2007,2008], 
-         'Taxa Desemprego':[1.5,1.7,1.6,2.4,2.7]}
+#dados = {'Estado':['Santa Catarina', 'Rio de Janeiro', 'Tocantins', 'Bahia', 'Minas Gerais'],
+         #'Ano':[2004,2005,2006,2007,2008], 
+         #'Taxa Desemprego':[1.5,1.7,1.6,2.4,2.7]}
 
 #print(dados)
 
@@ -12,9 +13,41 @@ dados = {'Estado':['Santa Catarina', 'Rio de Janeiro', 'Tocantins', 'Bahia', 'Mi
 #print(type(df))
 
 #nova_coluna = DataFrame(dados, columns = ['Estado', 'Taxa Desemprego', 'Ano'])
-df2 = DataFrame(dados,
-                columns=['Estado', 'Taxa Desemprego','Taxa de Crescimento', 'Ano'], 
-                index=['estado1','estado2', 'estado3', 'estado4', 'estado5'])
+#df2 = DataFrame(dados,
+               # columns=['Estado', 'Taxa Desemprego','Taxa de Crescimento', 'Ano'], 
+               # index=['estado1','estado2', 'estado3', 'estado4', 'estado5'])
+
+#df2['Taxa de Crescimento'] = np.arange(5.)
+
+#fatiamento de dataframes do pandas
+#print(df2.dtypes)
+
+#print(df2['estado2': 'estado4'])
+
+#print(df2[df2['Taxa Desemprego'] < 2])
+
+#print(df2[['Estado', 'Taxa de Crescimento', 'Ano']])
+
+dsa_df = pd.read_csv('manipulacaodearquivoscompython/datasetpd.csv')
+
+#print(dsa_df.head())
+
+#print(dsa_df.isna().sum())
+
+moda = dsa_df['Quantidade'].value_counts().index[0]
+
+#print(moda)
+dsa_df['Quantidade'].fillna(value= moda, inplace=True)
+
+#print(dsa_df.isna().sum())
+#print(dsa_df.Valor_Venda.describe())
 
 
-print(df2)
+
+df2 = dsa_df.query('229 < Valor_Venda < 10000')
+
+#print(df2.Valor_Venda.describe())
+
+df3 = df2.query('Valor_Venda > 766')
+
+print(df3.head())

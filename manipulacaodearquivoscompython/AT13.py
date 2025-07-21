@@ -59,3 +59,9 @@ df3 = df2.query('Valor_Venda > 766')
 #print(dsa_df[dsa_df['Quantidade'].isin([5,7,9,11])].shape)
 
 #print(dsa_df[dsa_df['Quantidade'].isin([5,7,9,11])][:10])
+
+#print(dsa_df[(dsa_df.Segmento == 'Home Office') & (dsa_df.Regiao == 'South')].head(5))
+
+#print(dsa_df[(dsa_df.Segmento == 'Home Office') | (dsa_df.Regiao == 'South')].tail)
+
+print(dsa_df[(dsa_df.Segmento != 'Home Office') | (dsa_df.Regiao != 'South')].sample(5))

@@ -37,7 +37,7 @@ dsa_df = pd.read_csv('manipulacaodearquivoscompython/datasetpd.csv')
 moda = dsa_df['Quantidade'].value_counts().index[0]
 
 #print(moda)
-dsa_df['Quantidade'].fillna(value= moda, inplace=True)
+dsa_df.loc[:, 'Quantidade'] = dsa_df['Quantidade'].fillna(value=moda)
 
 #print(dsa_df.isna().sum())
 #print(dsa_df.Valor_Venda.describe())
@@ -50,4 +50,12 @@ df2 = dsa_df.query('229 < Valor_Venda < 10000')
 
 df3 = df2.query('Valor_Venda > 766')
 
-print(df3.head())
+#print(df3.head())
+
+#print(dsa_df.shape)
+
+#print(dsa_df[dsa_df['Quantidade'].isin([5,7,9,11])])
+
+#print(dsa_df[dsa_df['Quantidade'].isin([5,7,9,11])].shape)
+
+#print(dsa_df[dsa_df['Quantidade'].isin([5,7,9,11])][:10])

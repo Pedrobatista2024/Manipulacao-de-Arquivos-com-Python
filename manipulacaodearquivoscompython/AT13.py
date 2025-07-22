@@ -90,4 +90,14 @@ dsa_df['Ano'] = dsa_df['ID_Pedido'].str.split('-').str[1]
 
 #dsa_df['Ano'] = dsa_df['ID_Pedido'].str.split('-').str[1]
 
+#strip de strings em dataframes no pandas
+
+#print(dsa_df['Data_Pedido'].str.lstrip('20', inpl))
+
+#Substituir strings
+
+#print(dsa_df.head())
+
+#dsa_df['ID_Cliente'] = dsa_df['ID_Cliente'].str.replace('CG', 'AX')
+
 print(dsa_df.head())

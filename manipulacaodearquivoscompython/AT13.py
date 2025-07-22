@@ -127,4 +127,6 @@ columns = ['sepal length (cm)', 'petal length (cm)', 'petal width (cm)','sepal w
 
 #print(df.groupby('species').count().plot.pie(y= 'sepal width (cm)'))
 
-print(df[columns].plot.box(figsize = (8,8)))
+#print(df[columns].plot.box(figsize = (8,8)))
+
+#FIM

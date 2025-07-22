@@ -70,4 +70,10 @@ df3 = df2.query('Valor_Venda > 766')
 
 #print(dsa_df[['Segmento', 'Regiao', 'Valor_Venda']].groupby(['Segmento', 'Regiao']).mean())
 
-print(dsa_df[['Segmento', 'Regiao', 'Valor_Venda']].groupby(['Segmento', 'Regiao']).agg(['mean', 'std', 'count']))
+#print(dsa_df[['Segmento', 'Regiao', 'Valor_Venda']].groupby(['Segmento', 'Regiao']).agg(['mean', 'std', 'count']))
+
+#manipulação de strings
+
+#print(dsa_df[dsa_df.Segmento.str.startswith('Con')].head())
+
+print(dsa_df[dsa_df.Segmento.str.endswith('umer')].head())

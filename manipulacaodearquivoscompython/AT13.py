@@ -50,6 +50,8 @@ df2 = dsa_df.query('229 < Valor_Venda < 10000')
 
 df3 = df2.query('Valor_Venda > 766')
 
+dsa_df['Ano'] = dsa_df['ID_Pedido'].str.split('-').str[1]
+
 #print(df3.head())
 
 #print(dsa_df.shape)
@@ -76,4 +78,16 @@ df3 = df2.query('Valor_Venda > 766')
 
 #print(dsa_df[dsa_df.Segmento.str.startswith('Con')].head())
 
-print(dsa_df[dsa_df.Segmento.str.endswith('umer')].head())
+#print(dsa_df[dsa_df.Segmento.str.endswith('umer')].head())
+
+#split de strings em dataframe do pandas
+
+#print(dsa_df['ID_Pedido'].head)
+
+#print(dsa_df['ID_Pedido'].str.split('-'))
+
+#print(dsa_df['ID_Pedido'].str.split('-').str[1].head())
+
+#dsa_df['Ano'] = dsa_df['ID_Pedido'].str.split('-').str[1]
+
+print(dsa_df.head())

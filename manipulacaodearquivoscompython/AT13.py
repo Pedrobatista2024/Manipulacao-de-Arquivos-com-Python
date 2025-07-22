@@ -64,4 +64,8 @@ df3 = df2.query('Valor_Venda > 766')
 
 #print(dsa_df[(dsa_df.Segmento == 'Home Office') | (dsa_df.Regiao == 'South')].tail)
 
-print(dsa_df[(dsa_df.Segmento != 'Home Office') | (dsa_df.Regiao != 'South')].sample(5))
+#print(dsa_df[(dsa_df.Segmento != 'Home Office') | (dsa_df.Regiao != 'South')].sample(5))
+
+#agrupamento
+
+print(dsa_df[['Segmento', 'Regiao', 'Valor_Venda']].groupby(['Segmento', 'Regiao']).mean())

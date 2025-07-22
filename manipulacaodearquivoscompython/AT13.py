@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 from pandas import DataFrame
+import sklearn
+from sklearn.datasets import load_iris
+
 
 #dados = {'Estado':['Santa Catarina', 'Rio de Janeiro', 'Tocantins', 'Bahia', 'Minas Gerais'],
          #'Ano':[2004,2005,2006,2007,2008], 
@@ -100,4 +103,28 @@ dsa_df['Ano'] = dsa_df['ID_Pedido'].str.split('-').str[1]
 
 #dsa_df['ID_Cliente'] = dsa_df['ID_Cliente'].str.replace('CG', 'AX')
 
-print(dsa_df.head())
+#Combinar strings
+
+dsa_df['Pedido_Segmento'] = dsa_df['ID_Pedido'].str.cat(dsa_df['Segmento'], sep= '-')
+
+#Construção de graficos com pandas
+#print(dsa_df.head()) 
+
+data = load_iris()
+
+df = pd.DataFrame(data['data'], columns= data['feature_names'])
+df['species'] = data['target']
+#print(df.head())
+
+#print(df.plot())
+
+#print(df.plot.scatter(x = 'sepal length (cm)', y = 'sepal width (cm)'))
+
+columns = ['sepal length (cm)', 'petal length (cm)', 'petal width (cm)','sepal width (cm)']
+#print(df[columns].plot.area())
+
+#print(df.groupby('species').mean().plot.bar())
+
+#print(df.groupby('species').count().plot.pie(y= 'sepal width (cm)'))
+
+print(df[columns].plot.box(figsize = (8,8)))

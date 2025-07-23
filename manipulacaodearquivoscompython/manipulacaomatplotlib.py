@@ -51,4 +51,21 @@ import matplotlib.pyplot as plt
 #plt.hist(idades, bins, histtype= 'stepfilled', rwidth= 0.8)
 #plt.show()
 
+# Grafico de Dispersão
 
+#x = [1,2,3,4,5,6,7,8]
+#y = [5,2,4,5,6,8,4,8]
+
+#plt.scatter(x, y, label= 'Pontos', color= 'black', marker= '*')
+#plt.legend()
+#plt.show()
+
+dias = [1,2,3,4,5]
+dormir = [7,8,6,7,7]
+comer = [2,3,4,5,3]
+trabalhar = [7,8,7,2,2]
+passear = [8,5,7,8,13]
+
+plt.stackplot(dias, dormir, comer, trabalhar, passear,  colors= ['m', 'c', 'r', 'k', 'b'])
+
+plt.show()

@@ -1,6 +1,7 @@
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from pylab import *
+from mpl_toolkits.mplot3d.axes3d import axis3d
 
 #plt.plot([1,3,5], [2,4,7])
 #plt.show()
@@ -164,7 +165,7 @@ from pylab import *
 #
 #plt.show()
 
-x = linspace(0,5,10)
+#x = linspace(0,5,10)
 #y = x ** 2
 #
 ##cria os subplots
@@ -202,5 +203,46 @@ x = linspace(0,5,10)
 ##plot 4
 #axess[3].fill_between(x, x ** 2, x ** 3, alpha=0.5, color= 'green')
 #axess[3].set_title('fill_between')
+#
+#plt.show()
+#
+##Histogramas
+#n = np.random.randn(100000)
+#
+#fig, axess = plt.subplots(1,2, figsize= (12,4))
+#
+#axess[0].hist(n)
+#axess[0].set_title('Histograma Padrão')
+#axess[0].set_xlim(min(n), max(n))
+#
+#axess[1].hist(n, cumulative= True, bins= 50)
+#axess[1].set_title('Histograma acumulativo')
+#axess[1].set_xlim(min(n), max(n))
+#
+
+#plt.show()
+
+#Grafico 3d
+
+#alpha = 0.7
+#phi_ext = 2 * np.pi * 0.5
+#
+#def ColorMap(phi_m, phi_p):
+#    return ( + alpha - 2 * np.cos(phi_p)*cos(phi_m) - alpha * np.cos(phi_ext - 2 * phi_p))
+#
+#phi_m = np.linspace(0,2*np.pi, 100)
+#phi_p = np.linspace(0,2*np.pi, 100)
+#x, y = np.meshgrid(phi_p, phi_m)
+#z = ColorMap(x, y).T
+#
+#fig = plt.figure(figsize=(14,6))
+#
+#ax = fig.add_subplot(1,2,1,projection= '3d')
+#p = ax.plot_surface(x, y, z, rstride=4, cstride=4, linewidth=0)
+#
+#ax = fig.add_subplot(1,2,2,projection= '3d')
+#p = ax.plot_surface(x, y, z, rstride=1, cstride=1, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+#
+#cb = fig.colorbar(p, shrink=0.5)
 #
 #plt.show()

@@ -145,3 +145,62 @@ from pylab import *
 #
 #plt.show()
 
+#Grafico de linhas com diferentes escalas
+
+#x = linspace(0,5,10)
+#y = x ** 2
+#
+##cria os subplots
+#fig, axess = plt.subplots(1,2, figsize=(10,4))
+#
+##cria o plot
+#axess[0].plot(x, x**2, x, exp(x))
+#axess[0].set_title("Escala padrão")
+#
+##cria plot2
+#axess[1].plot(x, x**2, x, exp(x))
+#axess[1].set_yscale("log")
+#axess[1].set_title("Escala logaritma (y)")
+#
+#plt.show()
+
+x = linspace(0,5,10)
+#y = x ** 2
+#
+##cria os subplots
+#fig, axess = plt.subplots(1,2, figsize=(10,3))
+#
+##cria o plot
+#axess[0].plot(x, x**2, x, x**3, lw= 2)
+#axess[0].grid(True)
+#
+##cria plot2
+#axess[1].plot(x, x**2, x, x**3, lw= 2)
+#axess[1].grid(color= 'b', alpha= 0.7, linestyle= 'dashed', linewidth= 0.8)
+#
+#plt.show()
+
+#Diferentes estilos de plots
+
+#xx = np.linspace(-0.75, 1., 100)
+#n = np.array([0,1,2,3,4,5])
+#
+#fig, axess = plt.subplots(1,4, figsize= (12,3))
+#
+##plot 1
+#axess[0].scatter(xx, xx + 0.25 * randn(len(xx)), color= 'black')
+#axess[0].set_title('scatter')
+#
+##plot 2
+#axess[1].step(n, n**2, lw= 2, color= 'blue')
+#axess[1].set_title('step')
+#
+##plot 3
+#axess[2].bar(n, n**2, align= 'center', width= 0.5, alpha= 0.5, color= 'magenta')
+#axess[2].set_title('bar')
+#
+##plot 4
+#axess[3].fill_between(x, x ** 2, x ** 3, alpha=0.5, color= 'green')
+#axess[3].set_title('fill_between')
+#
+#plt.show()

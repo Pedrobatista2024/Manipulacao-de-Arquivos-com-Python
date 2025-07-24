@@ -60,12 +60,16 @@ import matplotlib.pyplot as plt
 #plt.legend()
 #plt.show()
 
-dias = [1,2,3,4,5]
-dormir = [7,8,6,7,7]
-comer = [2,3,4,5,3]
-trabalhar = [7,8,7,2,2]
-passear = [8,5,7,8,13]
+#Grafico de area empilhada
 
-plt.stackplot(dias, dormir, comer, trabalhar, passear,  colors= ['m', 'c', 'r', 'k', 'b'])
+#dias = [1,2,3,4,5]
+#dormir = [7,8,6,7,7]
+#comer = [2,3,4,5,3]
+#trabalhar = [7,8,7,2,2]
+#passear = [8,5,7,8,13]
 
-plt.show()
+#plt.stackplot(dias, dormir, comer, trabalhar, passear,  colors= ['m', 'c', 'r', 'k', 'b'])
+
+#plt.show()
+
+

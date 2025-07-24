@@ -1,5 +1,6 @@
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+from pylab import *
 
 #plt.plot([1,3,5], [2,4,7])
 #plt.show()
@@ -81,4 +82,66 @@ import matplotlib.pyplot as plt
 #plt.pie(fatias, labels= atividades, colors= cores, startangle= 90, shadow= True, explode=(0,0.2,0,0))
 #plt.show()
 
+#Graficos customizados
+
+#x = linspace(0,5,10)
+#y = x ** 2
+
+#fig = plt.figure()
+
+#axess = fig.add_axes([0,0,0.8,0.8])
+
+#axess.plot(x, y, 'r')
+
+#plt.show()
+#axess.set_xlabel('x')
+#axess.set_ylabel('y')
+#axess.set_title('Gráfico de Linha')
+
+#Grafico de linha com 2 figuras
+
+#x = linspace(0,5,10)
+#y = x ** 2
+
+#fig = plt.figure()
+
+##Eixos
+
+#axes1 = fig.add_axes([0.1,0.1,0.8,0.8])
+#axes2 = fig.add_axes([0.2,0.5,0.4,0.3])
+
+##figura principal
+
+#axes1.plot(x,y,'r')
+#axes1.set_xlabel('x')
+#axes1.set_ylabel('y')
+#axes1.set_title('Figura Principal')
+
+##figura secundaria
+
+#axes2.plot(x,y,'g')
+#axes2.set_xlabel('x')
+#axes2.set_ylabel('y')
+#axes2.set_title('Figura Secundaria')
+
+#plt.show()
+
+##Grafico de linha parelelo
+#x = linspace(0,5,10)
+#y = x ** 2
+#
+##Divide a area de plotagem em dois subplots
+#fig, axess = plt.subplots(nrows= 1, ncols= 2)
+#
+##Loop pelo eixos para criar cada plot
+#for ax in axess:
+#    ax.plot(x, y, 'r')
+#    ax.set_xlabel('x')
+#    ax.set_ylabel('y')
+#    ax.set_title('Titulo')
+#
+##ajuste de layout
+#fig.tight_layout()
+#
+#plt.show()
 

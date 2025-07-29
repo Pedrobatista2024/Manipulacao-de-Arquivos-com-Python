@@ -11,19 +11,33 @@ cursor = con.cursor()
 
 #query2 = 'SELECT AVG(Unidades_Vendidas) FROM tb_vendas_dsa'
 
-query3 = ''
+#query3 = 'SELECT nome_produto, AVG(unidades_vendidas) FROM tb_vendas_dsa GROUP BY nome_produto'
 
-cursor.execute(query3)
+#query4 = """SELECT nome_produto, AVG(unidades_vendidas)
+#            FROM tb_vendas_dsa
+#            WHERE valor_unitario > 199
+#            GROUP BY nome_produto"""
+
+#query5 = """SELECT nome_produto, AVG(unidades_vendidas)
+            #FROM tb_vendas_dsa
+            #WHERE valor_unitario > 199
+            #GROUP BY nome_produto
+            #HAVING AVG(unidades_vendidas) > 10"""
+
+#cursor.execute(query5)
 
 #nomes_colunas = [description[0] for description in cursor.description]
 
 #print(nomes_colunas)
 
-print(cursor.fetchall())
-
-#print(dados)
-
 #print(cursor.fetchall())
+
+cursor.close()
+con.close()
+
+
+
+
 
 
 

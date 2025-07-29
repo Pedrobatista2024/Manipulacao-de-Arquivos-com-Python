@@ -56,9 +56,18 @@ df = pd.DataFrame(dados, columns= ['id_pedido',
 #cursor.close()
 #con.close()
 
-media_unidades_vendidas = df['unidades_vendidas'].mean()
+#media_unidades_vendidas = df['unidades_vendidas'].mean()
 
-print(media_unidades_vendidas)
+#media_unidades_vendidas_por_produto = df.groupby('nome_produto')['unidades_vendidas'].mean()
+
+#media_unidades_vendidas_por_produto = df[df['valor_unitario'] > 199].groupby('nome_produto')['unidades_vendidas'].mean()
+
+#media_unidades_vendidas_por_produto = df[df['valor_unitario'] > 199].groupby('nome_produto')\
+#                                            .filter(lambda x: x['unidades_vendidas']\
+#                                                    .mean() > 10).groupby('nome_produto')\
+#                                                    ['unidades_vendidas'].mean()
+#
+#print(media_unidades_vendidas_por_produto)
 
 
 

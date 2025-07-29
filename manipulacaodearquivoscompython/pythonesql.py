@@ -32,9 +32,33 @@ cursor = con.cursor()
 
 #print(cursor.fetchall())
 
-cursor.close()
-con.close()
+# APLICANDO SQL COM A SINTAXE DO PYTHON
 
+
+query = 'SELECT * FROM tb_vendas_dsa'
+
+cursor.execute(query)
+
+dados = cursor.fetchall()
+
+#print(dados)
+
+df = pd.DataFrame(dados, columns= ['id_pedido',
+                                   'id_cliente',
+                                   'nome_produto',
+                                   'valor_unitario',
+                                   'unidades_vendidas',
+                                   'custo'])
+
+#print(df.head())
+
+
+#cursor.close()
+#con.close()
+
+media_unidades_vendidas = df['unidades_vendidas'].mean()
+
+print(media_unidades_vendidas)
 
 
 

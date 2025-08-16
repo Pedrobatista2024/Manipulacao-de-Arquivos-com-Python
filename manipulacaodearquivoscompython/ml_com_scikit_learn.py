@@ -52,3 +52,38 @@ print(x_teste.shape)
 print(y_treino.shape)
 
 print(y_teste.shape)
+
+##MODELAGEM PREDITIVA 
+
+#cria o modelo de regressão linear
+modelo = LinearRegression()
+
+#treina o modelo
+modelo.fit(x_treino, y_treino)
+
+#visualiza a reta de regressão linear(previsões)
+#e os dados reais usados no treinamento
+plt.scatter(x,y, color='blue', label='Dados Reais Historicos')
+plt.plot(x, modelo.predict(x), color='red', label='Reta de Regressão com as Previsões do Modelo')
+plt.xlabel('Horas de Estudos')
+plt.ylabel('Salario')
+plt.legend()
+plt.show()
+
+#avalia o modelo nos dados de teste
+score = modelo.score(x_teste, y_teste)
+print(f'coeficiente R^2: {score:.2f}')
+
+#interceto - parãmetro de teste w0
+print(modelo.intercept_)
+
+#slope - parãmetro w1
+print(modelo.coef_)
+
+#definindo um novo valor em horas(novo funcionario)
+horas_estudos = np.array([[48]])
+
+#faz previsões com o treinado
+salario_previsto = modelo.predict(horas_estudos)
+
+print(salario_previsto)

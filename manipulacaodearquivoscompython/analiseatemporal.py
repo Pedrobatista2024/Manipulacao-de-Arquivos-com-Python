@@ -68,3 +68,22 @@ serie_atemporal = serie_atemporal.asfreq('D')
 #
 #plt.show()
 
+#analise e previsão de serie temporal com suavização exponencial
+
+#cria modelo
+modelo = SimpleExpSmoothing(serie_atemporal)
+
+#treinamento (ajuste) do modelo
+modelo_ajustado = modelo.fit(smoothing_level=0.2)
+
+#extrai os valores previstos pelo modelo
+suavizacao_exponencial = modelo_ajustado.fittedvalues
+
+#plot
+plt.figure(figsize=(12,6))
+plt.plot(serie_atemporal, label= 'Valores Reais')
+plt.plot(suavizacao_exponencial, label= 'Valores Previstos', linestyle= '--')
+plt.xlabel('Data')
+plt.ylabel('Vendas')
+plt.title('Modelo de Suavização Exponencial')
+plt.show()

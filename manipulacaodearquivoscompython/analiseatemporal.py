@@ -6,34 +6,65 @@ from statsmodels.tsa.holtwinters import SimpleExpSmoothing
 
 df_dsa = pd.read_csv('dadostemporal.csv')
 
-print(df_dsa.shape)
-
-print(df_dsa.head())
-
-print(df_dsa.tail())
-
-#pre_processamento do dados 
-
-#valor monimo da coluna data
-print(df_dsa.min())
-
-#valor maximo da coluna data
-print(df_dsa.max())
-
-print(df_dsa.info())
-#converte a coluna de data no tipo datetime
+#print(df_dsa.shape)
+#
+#print(df_dsa.head())
+#
+#print(df_dsa.tail())
+#
+##pre_processamento do dados 
+#
+##valor monimo da coluna data
+#print(df_dsa.min())
+#
+##valor maximo da coluna data
+#print(df_dsa.max())
+#
+#print(df_dsa.info())
+##converte a coluna de data no tipo datetime
 df_dsa['Data'] = pd.to_datetime(df_dsa['Data'])
 
-print(df_dsa.head())
-
-print(df_dsa.info())
+#print(df_dsa.head())
+#
+#print(df_dsa.info())
 
 serie_atemporal = df_dsa.set_index('Data')['Total_Vendas']
 
-print(type(serie_atemporal))
-
-print(serie_atemporal)
-
+#print(type(serie_atemporal))
+#
+#print(serie_atemporal)
+#
 serie_atemporal = serie_atemporal.asfreq('D')
 
-print(serie_atemporal)
+#print(serie_atemporal)
+
+#grafico serie temporal(sem formatação)
+#plt.figure(figsize=(12,6))
+#plt.plot(serie_atemporal)
+#plt.xlabel('Data')
+#plt.ylabel('Venda')
+#plt.title('Serie Temporal de vendas')
+#plt.grid(True)
+#plt.show()
+
+#grafico serie temporal(comm formatação)
+
+#cria o grafico da serie temporal com layout de constraste
+#plt.figure(figsize=(12,6))
+#plt.plot(serie_atemporal, color= 'white', linewidth=2)
+#
+##cores e estilos
+#plt.gca().set_facecolor('#2e03a3')
+#plt.grid(color='yellow', linestyle='--',linewidth=0.5)
+#
+##rotulos titulos e legenda
+#plt.xlabel('Data', color= 'black', fontsize=14)
+#plt.ylabel('Venda', color= 'black', fontsize=14)
+#plt.title('Serie Temporal de vendas', color= 'black', fontsize=18)
+#
+##cores dos eixos e dos ticks(marcadores)
+#plt.tick_params(axis= 'x', colors= 'black')
+#plt.tick_params(axis= 'y', colors= 'black')
+#
+#plt.show()
+

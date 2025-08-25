@@ -80,10 +80,16 @@ modelo_ajustado = modelo.fit(smoothing_level=0.2)
 suavizacao_exponencial = modelo_ajustado.fittedvalues
 
 #plot
-plt.figure(figsize=(12,6))
-plt.plot(serie_atemporal, label= 'Valores Reais')
-plt.plot(suavizacao_exponencial, label= 'Valores Previstos', linestyle= '--')
-plt.xlabel('Data')
-plt.ylabel('Vendas')
-plt.title('Modelo de Suavização Exponencial')
-plt.show()
+#plt.figure(figsize=(12,6))
+#plt.plot(serie_atemporal, label= 'Valores Reais')
+#plt.plot(suavizacao_exponencial, label= 'Valores Previstos', linestyle= '--')
+#plt.xlabel('Data')
+#plt.ylabel('Vendas')
+#plt.title('Modelo de Suavização Exponencial')
+#plt.show()
+
+#fazer previsões
+num_previsoes = 1
+previsoes = modelo_ajustado.forecast(steps= num_previsoes)
+
+print('Previsão do Total de Vendas para Janeiro/2024', round(previsoes[0], 4))
